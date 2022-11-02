@@ -8,7 +8,7 @@ import time
 from flask import Flask
 app = Flask(__name__)
 
-@app.route("/Scotch", methods=["POST"])
+@app.route("/scotch", methods=["POST"])
 def scotch_message():
     
     # it probably would be better design to read this in from a file or database, but i'm lazy
@@ -57,7 +57,7 @@ def scotch_message():
     return send_message("Today's Scotch is: " + scotch, os.getenv("SCOTCH_GROUP_API_KEY")) 
 
 
-@app.route("/Trivia", methods=["POST"])
+@app.route("/trivia", methods=["POST"])
 def trivia_hello_post():
     return send_message("Like for trivia tonight at 8 at Black Sheep Pizza (North Loop)", os.getenv("TRIVIA_GROUP_API_KEY"))
 
