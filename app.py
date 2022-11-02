@@ -72,4 +72,5 @@ def send_message(msg, api_key):
         "text": msg
     }
 
-    return requests.post(url, json=payload)
+    response = requests.post(url, json=payload)
+    return (response.text, response.status_code, response.headers.items())
