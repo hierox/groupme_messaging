@@ -4,6 +4,7 @@ import os
 import requests
 import datetime
 import time
+import pytz
 
 from flask import Flask
 app = Flask(__name__)
@@ -39,22 +40,21 @@ def scotch_message():
     scotch_list.append("Redbreast (Jar 24/X)")
 
     # get todays date
-    today = datetime.datetime.today()
-    print("Datetime: ", today)
+    today = datetime.datetime.today(pytz.timezone('US/Central'))
+    print("Date: ", today)
 
     # only output when we want the advent calendar to run
     if (today.year != 2022): # we don't want this running next year
         return
     # if (today.month != 12): # start in december
     #    return
-    actual_day = today.day - 1 # the bot runs after midnight UTC
-    if (actual_day < 1):
+    if (today.day < 1):
         return
-    if (actual_day > len(scotch_list)):
+    if (today.day > len(scotch_list)):
         return
 
     # python is 0 indexed
-    scotch = scotch_list[actual_day - 1]
+    scotch = scotch_list[today.day - 1]
     
     # send the message
     return send_message("Today's Scotch is: " + scotch, os.getenv("SCOTCH_GROUP_API_KEY")) 
