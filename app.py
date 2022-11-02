@@ -4,7 +4,6 @@ import os
 import requests
 import datetime
 import time
-import pytz
 
 from flask import Flask
 app = Flask(__name__)
@@ -39,8 +38,8 @@ def scotch_message():
     scotch_list.append("Jura 10 (Jar 23/W)")
     scotch_list.append("Redbreast (Jar 24/X)")
 
-    # get todays date
-    today = datetime.datetime.today(pytz.timezone('US/Central'))
+    # get todays date - US central is 6 hours behind UTC
+    today = datetime.datetime.today() - datetime.timedelta(hours=6)
     print("Date: ", today)
 
     # only output when we want the advent calendar to run
