@@ -40,7 +40,7 @@ def scotch_message():
 
     # get todays date
     today = datetime.datetime.today()
-    print("Datetime: " + today)
+    print("Datetime: ", today)
 
     # only output when we want the advent calendar to run
     if (today.year != 2022): # we don't want this running next year
@@ -66,7 +66,7 @@ def trivia_hello_post():
 
 
 def send_message(msg, api_key):
-    print("sending message: %s" % msg)
+    print("sending message: ", msg)
 
     url = "https://api.groupme.com/v3/bots/post"
 
