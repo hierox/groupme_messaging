@@ -8,6 +8,12 @@ import time
 from flask import Flask
 app = Flask(__name__)
 
+@app.route("/awaken", methods=["GET"])
+def awaken_service():
+    # for some reason render.com's dynos aren't very reliable
+    # hit this endpoint a few minutes before using the others to make sure service is ready
+    return ("ok", 200)
+
 @app.route("/scotch", methods=["POST"])
 def scotch_message():
     
