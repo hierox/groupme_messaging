@@ -50,13 +50,13 @@ def scotch_message():
 
     # only output when we want the advent calendar to run
     if (today.year != 2022): # we don't want this running next year
-        return
-    # if (today.month != 12): # start in december
-    #    return
+        return ("ok", 200)
+    if (today.month != 12): # start in december
+        return ("ok", 200)
     if (today.day < 1):
-        return
+        return ("error", 500)
     if (today.day > len(scotch_list)):
-        return
+        return ("ok", 200)
 
     # python is 0 indexed
     scotch = scotch_list[today.day - 1]
