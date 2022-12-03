@@ -22,7 +22,7 @@ def scotch_message():
     scotch_list.append("Tamnavulin Sherry Cask Single Malt Whisky (Jar 1/A)")
     scotch_list.append("Rough Rider The Big Stick Rye (Jar 2/B)")
     scotch_list.append("Aberlour 12 Year (Jar 3/C)")
-    scotch_list.append("Laphroaig 10 (Jar 4/D)")
+    scotch_list.append("Laphroaig 10 Year (Jar 4/D)")
     scotch_list.append("Arran 10 Year (Jar 5/E)")
     scotch_list.append("Yamato Japanese Whisky Mizunara Cask (Jar 6/F)")
     scotch_list.append("Basil Hayden Small Batch (Jar 7/G)")
@@ -42,6 +42,7 @@ def scotch_message():
     scotch_list.append("Nikka Coffey Grain (Jar 21/U)")
     scotch_list.append("Balcones Brimstone (Jar 22/V)")
     scotch_list.append("Chankaska Ranch Road Nut Brown (Jar 23/W)")
+    scotch_list.append("Amrut Indian Single Malt (Jar 24/X)")
 
     # get todays date - US central is 6 hours behind UTC
     today = datetime.datetime.today() - datetime.timedelta(hours=6)
