@@ -49,7 +49,7 @@ def scotch_message():
     print("Date: ", today)
 
     # only output when we want the advent calendar to run
-    if (today.year != 2022): # we don't want this running next year
+    if (today.year != 2023): # we don't want this running next year
         return ("ok", 200)
     if (today.month != 12): # start in december
         return ("ok", 200)
